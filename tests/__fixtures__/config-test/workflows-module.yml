@@ -1,0 +1,3 @@
+default:
+  stepUsableLocation: ./tests/__fixtures__
+  workflowsLocation: ./tests/__fixtures__
