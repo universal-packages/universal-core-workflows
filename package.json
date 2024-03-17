@@ -16,7 +16,7 @@
     "update-dependents": "umaintenance update-dependents"
   },
   "dependencies": {
-    "@universal-packages/sub-process": "^1.10.0",
+    "@universal-packages/sub-process": "^1.11.0",
     "@universal-packages/workflows": "^1.5.4"
   },
   "peerDependencies": {
