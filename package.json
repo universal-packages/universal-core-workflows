@@ -16,7 +16,7 @@
     "update-universal-dependencies": "umaintenance update-universal-dependencies"
   },
   "dependencies": {
-    "@universal-packages/workflows": "^1.8.2"
+    "@universal-packages/workflows": "^1.8.5"
   },
   "peerDependencies": {
     "@universal-packages/core": "^1.16.38"
