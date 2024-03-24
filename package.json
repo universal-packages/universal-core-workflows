@@ -1,6 +1,6 @@
 {
   "name": "@universal-packages/core-workflows",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "description": "Workflows universal-core module abstraction.",
   "author": "David De Anda <david@universal-packages.com> (https://github.com/universal-packages)",
   "license": "MIT",
