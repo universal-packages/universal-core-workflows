@@ -10,7 +10,7 @@ export default class WorkflowsTask extends CoreTask {
     switch (this.directive) {
       case 'init':
         await populateTemplates(path.resolve(__dirname, 'template'), './', { override: this.args.f })
-        this.logger.publish('INFO', 'Workflows template initialized')
+        this.logger.log({ level: 'INFO', title: 'Workflows template initialized' })
         break
 
       default:

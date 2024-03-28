@@ -8,7 +8,7 @@ describe(WorkflowTask, (): void => {
         config: { location: './tests/__fixtures__/config-test' },
         modules: { location: './tests/__fixtures__' },
         tasks: { location: './tests/__fixtures__' },
-        logger: { silence: true, level: 'DEBUG', terminal: { withHeader: true } }
+        logger: { silence: true, level: 'DEBUG' }
       }
     })
   })
