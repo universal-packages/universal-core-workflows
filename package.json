@@ -16,7 +16,6 @@
     "update-universal-dependencies": "umaintenance update-universal-dependencies"
   },
   "dependencies": {
-    "@universal-packages/logger-terminal-presenter": "^1.0.12",
     "@universal-packages/workflows": "^1.9.1"
   },
   "peerDependencies": {
