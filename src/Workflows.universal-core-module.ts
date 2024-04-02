@@ -1,5 +1,7 @@
 import { CoreModule } from '@universal-packages/core'
 import { BuildFromOptions, Workflow } from '@universal-packages/workflows'
+import { WorkflowTerminalPresenter } from '@universal-packages/workflows-terminal-presenter'
+import { LOG_CONFIGURATION } from '@universal-packages/workflows-terminal-presenter/LOG_CONFIGURATION'
 
 export default class WorkflowsModule extends CoreModule<BuildFromOptions> {
   public static readonly moduleName = 'workflows-module'
@@ -8,8 +10,42 @@ export default class WorkflowsModule extends CoreModule<BuildFromOptions> {
 
   public subject: WorkflowsModule
 
-  public buildFrom(name: string): Workflow {
-    return Workflow.buildFrom(name, this.config)
+  private workflowRunning: Workflow
+
+  public async buildFromAndRun(name: string): Promise<void> {
+    if (this.workflowRunning) {
+      this.logger.log(
+        {
+          level: 'WARNING',
+          title: 'Workflow already running',
+          message: 'A workflow is already running, please wait until it finishes.',
+          category: 'WORKFLOWS'
+        },
+        LOG_CONFIGURATION
+      )
+
+      return
+    }
+
+    this.workflowRunning = Workflow.buildFrom(name, this.config)
+
+    const workflowTerminalPresenter = new WorkflowTerminalPresenter({
+      logger: this.logger,
+      showStrategyRoutines: 'running',
+      workflow: this.workflowRunning,
+      TerminalPresenter: core.TerminalPresenter
+    })
+
+    workflowTerminalPresenter.present()
+
+    await this.workflowRunning.run()
+    await this.logger.waitForLoggingActivity()
+
+    this.workflowRunning = null
+  }
+
+  public async stop(): Promise<void> {
+    if (this.workflowRunning) await this.workflowRunning.stop()
   }
 
   public async prepare(): Promise<void> {

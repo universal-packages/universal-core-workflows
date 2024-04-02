@@ -1,0 +1,6 @@
+name: Test Workflow
+
+routines:
+  echo:
+    steps:
+      - run: echo Hello, World!
