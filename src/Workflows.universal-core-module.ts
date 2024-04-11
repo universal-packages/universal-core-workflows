@@ -32,6 +32,7 @@ export default class WorkflowsModule extends CoreModule<BuildFromOptions> {
     const workflowTerminalPresenter = new WorkflowTerminalPresenter({
       logger: this.logger,
       showStrategyRoutines: 'running',
+      terminalPresenterAccess: 'core',
       workflow: this.workflowRunning
     })
 
