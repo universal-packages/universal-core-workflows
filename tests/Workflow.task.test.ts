@@ -2,7 +2,7 @@ import WorkflowTask from '../src/Workflow.universal-core-task'
 
 describe(WorkflowTask, (): void => {
   it('behaves as expected', async (): Promise<void> => {
-    await jestCore.execTask('workflow', {
+    await coreJest.execTask('workflow', {
       directive: 'test',
       coreConfigOverride: {
         config: { location: './tests/__fixtures__/config-test' },

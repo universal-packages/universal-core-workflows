@@ -4,7 +4,7 @@ import { WorkflowTerminalPresenter } from '@universal-packages/workflows-termina
 import { LOG_CONFIGURATION } from '@universal-packages/workflows-terminal-presenter/LOG_CONFIGURATION'
 
 export default class WorkflowsModule extends CoreModule<BuildFromOptions> {
-  public static readonly moduleName = 'workflows-module'
+  public static readonly moduleName = 'workflows'
   public static readonly description = 'Workflows core module wrapper'
   public static readonly defaultConfig: BuildFromOptions = { stepUsableLocation: './src', workflowsLocation: './' }
 

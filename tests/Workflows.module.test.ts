@@ -1,6 +1,6 @@
 import { WorkflowsModule } from '../src'
 
-jestCore.runBare({
+coreJest.runBare({
   coreConfigOverride: {
     config: { location: './tests/__fixtures__/config-test' },
     modules: { location: './tests/__fixtures__' },
@@ -11,6 +11,6 @@ jestCore.runBare({
 describe(WorkflowsModule, (): void => {
   it('behaves as expected', async (): Promise<void> => {
     expect(global.workflowsSubject).not.toBeUndefined()
-    expect(global.workflowsSubject).toEqual(core.coreModules['workflowsModule'])
+    expect(global.workflowsSubject).toEqual(core.coreModules.workflows)
   })
 })

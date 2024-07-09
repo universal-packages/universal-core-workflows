@@ -14,6 +14,12 @@ npm install @universal-packages/core-workflows
 npm install @universal-packages/core
 ```
 
+## Initialization
+
+```shell
+ucore initialize workflows
+```
+
 ## Run a workflow
 
 ```shell
